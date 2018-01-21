@@ -84,6 +84,9 @@ ro.vendor.nfc.info.deviceFoldable=false
 
 # RIL
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+ro.ril.svlte1x=false
+ro.ril.svdo=false
+ro.ril.support_cdma=false
 
 ## Power HAL
 vendor.powerhal.disp.idle_support=false

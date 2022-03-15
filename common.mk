@@ -60,6 +60,11 @@ PRODUCT_PACKAGES += \
     libhwjpeg \
     libexpat.vendor
 
+# Cgroup and task_profiles
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images_vendor
@@ -269,8 +274,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
-    $(COMMON_PATH)/configs/power/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+    $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Protobuf
 PRODUCT_PACKAGES += \

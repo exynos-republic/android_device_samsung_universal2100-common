@@ -108,6 +108,13 @@ KERNEL_LD := LD=ld.lld
 # Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
 
+### CAMERA
+SOONG_CONFIG_NAMESPACES += exynos2100CameraVars
+SOONG_CONFIG_exynos2100CameraVars += \
+    exynos2100_model
+
+SOONG_CONFIG_exynos2100CameraVars_exynos2100_model := $(TARGET_DEVICE)
+
 ## Manifest
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \

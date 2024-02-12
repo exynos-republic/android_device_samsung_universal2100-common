@@ -80,11 +80,6 @@ ro.vendor.nfc.info.deviceWidth=71.2
 ro.vendor.nfc.info.deviceHeight=151.7
 ro.vendor.nfc.info.deviceFoldable=false
 
-# keystore
-ro.hardware.keystore=mdfpp
-ro.hardware.keystore_desede=true
-ro.security.keystore.keytype=sakv2,gak,sgak,
-
 # RIL
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 

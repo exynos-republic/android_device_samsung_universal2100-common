@@ -25,6 +25,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 
+# Soong namespaces
+$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl:32 \

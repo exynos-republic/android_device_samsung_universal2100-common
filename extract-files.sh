@@ -70,6 +70,13 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/bin/vaultkeeperd|vendor/lib64/libvkservice.so)
+            sed -i 's/ro\.factory\.factory_binary/ro.vendor.factory_binary\x00/g' "${2}"
+            ;;
+        vendor/lib*/libsec-ril*.so)
+            xxd -p -c0 "${2}" | sed "s/800e40f9e10316aa820c8052e30315aa/800e40f9e10316aa820c8052080080d2/g" | xxd -r -p > "${2}".patched
+            mv "${2}".patched "${2}"
+            ;;
         vendor/lib*/libsensorlistener.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed libshim_sensorndkbridge.so "${2}"
@@ -90,15 +97,6 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
             sed -i 's/_ZN7android6Thread3runEPKcim/_ZN7utils326Thread3runEPKcim/g' "${2}"
-            ;;
-        vendor/bin/hw/rild)
-            [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed libril.so libril-samsung.so "${2}"
-            ;;
-        vendor/lib64/libsec-ril.so)
-            [ "$2" = "" ] && return 0
-            xxd -p -c0 "${2}" | sed "s/600e40f9e10315aa820c8052e30314aa/600e40f9e10315aa820c8052030080d2/g" | xxd -r -p > "${2}".patched
-            mv "${2}".patched "${2}"
             ;;
         vendor/lib/soundfx/libaudioeffectoffload.so | vendor/lib64/soundfx/libaudioeffectoffload.so)
             [ "$2" = "" ] && return 0

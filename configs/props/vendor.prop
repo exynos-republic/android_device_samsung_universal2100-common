@@ -86,7 +86,7 @@ ro.hardware.keystore_desede=true
 ro.security.keystore.keytype=sakv2,gak,sgak,
 
 # RIL
-ro.telephony.default_network=9,9
+vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 
 ## Power HAL
 vendor.powerhal.disp.idle_support=false

@@ -274,12 +274,24 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor:64 \
-    android.hardware.radio.config@1.2.vendor:64 \
-    android.hardware.radio.deprecated@1.0.vendor:64 \
+    android.hardware.radio@1.2.vendor:64 \
+    android.hardware.radio.config-V1-ndk.vendor:64 \
+    android.hardware.radio.data-V1-ndk.vendor:64 \
+    android.hardware.radio.messaging-V1-ndk.vendor:64 \
+    android.hardware.radio.modem-V1-ndk.vendor:64 \
+    android.hardware.radio.network-V1-ndk.vendor:64 \
+    android.hardware.radio.sim-V1-ndk.vendor:64 \
+    android.hardware.radio.voice-V1-ndk.vendor:64
+
+PRODUCT_PACKAGES += \
     secril_config_svc \
     libnetutils.vendor \
-    libsqlite.vendor
+    libsqlite.vendor \
+    libdsms_vendor:64 \
+    sehradiomanager
+
+PRODUCT_COPY_FILES += \
+     $(COMMON_PATH)/configs/ril/sehradiomanager.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sehradiomanager.conf
 
 # Sensors
 PRODUCT_PACKAGES += \

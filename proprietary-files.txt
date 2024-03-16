@@ -295,7 +295,9 @@ vendor/etc/init/android.hardware.neuralnetworks@1.3-service.eden-drv.rc
 vendor/firmware/libnn.elf
 
 # RIL
+vendor/bin/cass
 vendor/bin/cbd
+vendor/etc/init/cass.rc
 vendor/etc/plmn_delta.bin
 vendor/etc/plmn_delta_attaio.bin
 vendor/etc/plmn_delta_usagsm.bin
@@ -303,30 +305,33 @@ vendor/etc/plmn_se13.bin
 vendor/lib/libaudio-ril.so
 vendor/lib/libmdf.so
 vendor/lib/libsec_semRil.so
-vendor/lib/libsecnativefeature.so
--vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos2100
 vendor/lib/libsecure_storage.so
 vendor/lib64/libmdf.so
 vendor/lib64/libsec_semRil.so
-vendor/lib64/libsecnativefeature.so
--vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos2100
 vendor/lib64/libsecure_storage.so
-vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
-vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
-vendor/lib64/vendor.samsung.hardware.radio@2.0.so
-vendor/lib64/vendor.samsung.hardware.radio@2.1.so
+vendor/etc/init/init.baseband.rc
+vendor/etc/init/init.vendor.rilcommon.rc
 
-## RIL - from o1s - G991BXXU1AUA4
-vendor/bin/hw/rild|85f98906d824830d0e132fb63ea6adb1b99b08b9
-vendor/etc/init/init.baseband.rc|8f2154bd1343d3ff90c465b087b449c6dfc4576b
-vendor/etc/init/init.vendor.rilchip.rc|83d57882dfaefaaa21c5dd636bafd655dfaf0b10
-vendor/etc/init/init.vendor.rilcommon.rc|eb3115e335457fdc95c854190ee6804e165718f2
-vendor/lib/libril-samsung.so|24f397a3a38fab7828c46e74d17f3a3b0d7497ac
-vendor/lib/libsemnativecarrierfeature.so|dcf01e550feb3a06ab82a47ee79641157dcddb8d
-vendor/lib64/libril-samsung.so|3609d8c594525de92c97731d901b2fbc5633688f
-vendor/lib64/libsec-ril-dsds.so|7ce0cf6c55e933b0be12afedebc3385f71e76cac
-vendor/lib64/libsec-ril.so|9ece76a91b148a98756ba51b73ec974a046c80df
-vendor/lib64/libsemnativecarrierfeature.so|723634c41038c781b05550b32d623c37b91a7832
+## RIL - from a54x - A546BXXU5BWK4
+-vendor/bin/hw/rild|249bd469620af395bcca58153d40cee6c28bdcb5
+vendor/etc/init/vendor.samsung.rilchip.slsi.rc|95aa52333814b340e5064eae3a9bd5cb8a96a3ff
+-vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml|c3f8ea3f6228f2d572081b0c0ae29a251de4350b
+-vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml|e9cdde9d05c5cce32f76bbb164437f43b3288157
+-vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_33.xml|ebbe359a9b2d78cb88debe79d9183c039afb7c01
+-vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos2100|fd7cb317ad17fd6c5b94c69bc4eaef80631215f1
+-vendor/lib/libsemnativecarrierfeature.so|56ed7bd5f596502cf9614b5d9ebf255ac4e1e73c
+-vendor/lib64/libSemDataProps.so|023991c586ba36f42f06b7f9286cf417bcb8a9f8
+-vendor/lib64/libSemTelephonyProps.so|cbde8c62e9126875501d26681873b81e75dcd8a0
+-vendor/lib64/libril_sem.so|9bcd6054a5ebded9ba92f27ef00ab537ab1c09b9
+-vendor/lib64/libsec-ril.so|f66b4199957f40d0e023141e86606696a740872f
+-vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos2100|bae84e05d1c19dc5b41bfe2326dbf2744b1e412c
+-vendor/lib64/libsemnativecarrierfeature.so|b69b820d8881d4e7bba426212e4aba31095bb437
+-vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so|738bc9ac0ca800b36e8b08652240ee01ddba6e47
+-vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so|6faa7fbeab4b7d335d434729ec22493fde30028c
+-vendor/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so|fc3522bd787fa48ab80f53c0836cbb0c5ddf1b10
+-vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so|8645b1d3d2e944a38ec07ee8c69d9f7d817b3730
+-vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so|9b3b09c9bc2911b801d0de0caea13476a90f8776
+-vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so|611a9f8ca1a46b33471643e200e70ce28f963b75
 
 # Teegris
 vendor/bin/tzdaemon

@@ -51,3 +51,6 @@ ro.build.version.oneui        u:object_r:oneui_version_prop:s0
 
 # Misc
 ro.fastbootd.available       u:object_r:exported_system_prop:s0
+
+# Product
+ro.product_ship                         u:object_r:product_ship_prop:s0

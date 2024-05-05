@@ -62,6 +62,9 @@ BOARD_MKBOOTIMG_ARGS := \
     --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --pagesize $(BOARD_KERNEL_PAGESIZE) --header_version $(BOARD_BOOT_HEADER_VERSION) \
     --board "SRPTH19C005KU"
 
+## Camera
+$(call soong_config_set,samsungCameraVars,usage_64bit,true)
+
 # Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 11429478400
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions

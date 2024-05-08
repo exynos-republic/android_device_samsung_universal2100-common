@@ -153,6 +153,7 @@ vendor/lib64/vendor.samsung.hardware.security.drk@2.0.so
 # Eden Runtime
 vendor/bin/hw/vendor.samsung_slsi.hardware.eden_runtime@1.0-service
 vendor/etc/eden/gpu/eden_kernel_64.bin
+vendor/etc/eden/enn_preset.json
 vendor/etc/init/vendor.samsung_slsi.hardware.eden_runtime@1.0-service.rc
 vendor/lib/libeden_model.so
 vendor/lib/libeden_nn.so

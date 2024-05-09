@@ -231,7 +231,7 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0.vendor:64 \
-    android.hardware.power-service.samsung-libperfmgr
+    android.hardware.power-service.pixel-libperfmgr
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
@@ -272,7 +272,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/samsung \
     hardware/samsung_slsi/interfaces \
-    hardware/samsung/aidl/power-libperfmgr \
     hardware/samsung_slsi-linaro/exynos/gralloc4
 
 # Memtrack

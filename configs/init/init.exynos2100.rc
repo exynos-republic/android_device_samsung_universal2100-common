@@ -81,6 +81,8 @@ on init
     write /dev/cpuset/foreground/cpus 0-2,4-7
     write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-2
+    
+    setprop vendor.powerhal.init 1
 
     mkdir /dev/cpuset/sf
     copy /dev/cpuset/cpus /dev/cpuset/sf/cpus

@@ -188,6 +188,9 @@ vendor/etc/init/android.hardware.neuralnetworks@1.3-service.eden-drv.rc
 # Neural Networks firmware
 vendor/firmware/libnn.elf
 
+# Proca
+-vendor/bin/vendor.samsung.hardware.security.proca@2.0-service
+
 # RIL
 vendor/bin/cass
 vendor/bin/cbd

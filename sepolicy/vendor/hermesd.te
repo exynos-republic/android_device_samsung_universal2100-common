@@ -10,5 +10,8 @@ allow hermesd property_socket:sock_file write;
 allow hermesd ssp_device:chr_file { ioctl open read write };
 allow hermesd tz_user_device:chr_file { ioctl map open read write };
 allow hermesd vendor_tztsdaemon_prop:file { getattr map open read };
+allow hermesd vendor_data_file:file { create write open };
+allow hermesd vendor_data_file:dir { write };
+allow hermesd vendor_data_file:dir { add_name };
 
 dontaudit hermesd exported_default_prop:property_service set;

@@ -1,0 +1,3 @@
+# crash_dump.te
+
+allow crash_dump hwc_vendor_file:file { getattr open read };

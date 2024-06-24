@@ -24,3 +24,11 @@ allow hal_audio_default self:netlink_kobject_uevent_socket { bind create getopt 
 get_prop(hal_audio_default, vendor_radio_prop)
 
 dontaudit hal_audio_default radio_prop:file r_file_perms;
+binder_call(hal_audio_default, hal_audio_default)
+
+allow hal_audio_default hal_system_suspend_service:service_manager find;
+allow hal_audio_default sysfs_abox_writable:file write;
+allow hal_audio_default sysfs_abox_writable:file { open write };
+allow hal_audio_default vendor_sysfs_cirrus_cal_writable:file write;
+allow hal_audio_default vendor_sysfs_cirrus_cal_writable:dir search;
+allow hal_audio_default vendor_sysfs_cirrus_cal_writable:file { getattr open write };

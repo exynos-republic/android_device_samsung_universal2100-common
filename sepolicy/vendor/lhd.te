@@ -1,5 +1,7 @@
 # lhd.te
 allow lhd sysfs_sensors_writable:file rw_file_perms;
+allow lhd hal_system_suspend_service:service_manager find;
+allow lhd sysfs_gps_writable:file write;
 
 get_prop(lhd, debug_level_prop);
 get_prop(lhd, product_ship_prop);

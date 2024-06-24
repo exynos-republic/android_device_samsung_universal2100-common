@@ -187,6 +187,17 @@ genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-17/17-001f/s2mps23-po
 genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-17/17-001f/s2mps23-rtc/rtc/rtc0/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-17/17-001f/s2mps23-rtc/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-17/17-001f/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/name u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/expire_count u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/wakeup_count u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/active_count u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/event_count u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/last_change_ms u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/active_time_ms u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/max_time_ms u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/prevent_suspend_time_ms u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/total_time_ms u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/rtc/rtc0/wakeup55/waiting_for_supplier u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-power-keys/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/wakeup u:object_r:sysfs_wakeup:s0

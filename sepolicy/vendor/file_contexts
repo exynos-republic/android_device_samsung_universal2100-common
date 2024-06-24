@@ -9,6 +9,7 @@
 # Data Files
 
 /data/per_boot(/.*)?           u:object_r:per_boot_file:s0
+/data/vendor/eden(/.*)?        u:object_r:data_eden_file:s0
 /data/vendor/eden/gpu(/.*)?    u:object_r:data_eden_gpu_file:s0
 /data/vendor/mediadrm(/.*)?    u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/nfc(/.*)?         u:object_r:nfc_vendor_data_file:s0
@@ -20,22 +21,35 @@
 #
 
 # Block
+/dev/block/platform/.+/by-name/boot                                                                           u:object_r:boot_block_device:s0
 /dev/block/platform/.+/by-name/blcmd                                                                          u:object_r:blcmd_block_device:s0
+/dev/block/platform/.+/by-name/boota                                                                          u:object_r:boota_block_device:s0
 /dev/block/platform/.+/by-name/cp_debug                                                                       u:object_r:cpdebug_block_device:s0
 /dev/block/platform/.+/by-name/cpefs                                                                          u:object_r:cpefs_block_device:s0
+/dev/block/platform/.+/by-name/dtb                                                                            u:object_r:dtb_block_device:s0
+/dev/block/platform/.+/by-name/efs                                                                            u:object_r:efs_block_device:s0
+/dev/block/platform/.+/by-name/harx                                                                           u:object_r:harx_block_device:s0
 /dev/block/platform/.+/by-name/keystorage                                                                     u:object_r:keystorage_block_device:s0
 /dev/block/platform/.+/by-name/nad_refer                                                                      u:object_r:nad_refer_block_device:s0
 /dev/block/platform/.+/by-name/optics                                                                         u:object_r:optics_block_device:s0
 /dev/block/platform/.+/by-name/param                                                                          u:object_r:param_block_device:s0
+/dev/block/platform/.+/by-name/persist                                                                        u:object_r:persist_block_device:s0
+/dev/block/platform/.+/by-name/persistent                                                                     u:object_r:frp_block_device:s0
 /dev/block/platform/.+/by-name/prism                                                                          u:object_r:prism_block_device:s0
 /dev/block/platform/.+/by-name/spu                                                                            u:object_r:spu_block_device:s0
 /dev/block/platform/.+/by-name/steady                                                                         u:object_r:spu_block_device:s0
+/dev/block/platform/.+/by-name/uh                                                                             u:object_r:uh_block_device:s0
+/dev/block/platform/.+/by-name/uhcfg                                                                          u:object_r:uhcfg_block_device:s0
 /dev/block/platform/.+/by-name/up_param                                                                       u:object_r:up_param_block_device:s0
+/dev/block/platform/.+/by-name/omr                                                                            u:object_r:omr_block_device:s0
+/dev/block/platform/.+/by-name/radio                                                                          u:object_r:radio_block_device:s0
+/dev/block/platform/.+/by-name/radio2                                                                         u:object_r:radio_block_device:s0
 /sys/devices/platform/(.*)/block/sdd/queue/discard_max_bytes                                                  u:object_r:sysfs_block_writable:s0
 /sys/devices/platform/(.*)/block/sd[a-z]+/start                                                               u:object_r:sysfs_block:s0
 
 # Camera
 /dev/caminfo                                                                                                  u:object_r:caminfo_device:s0
+/dev/m2m1shot_scaler0                                                                                         u:object_r:m2m1shot_device:s0
 /dev/jsqz                                                                                                     u:object_r:jsqz_device:s0
 /dev/vertex10                                                                                                 u:object_r:npu_device:s0
 
@@ -54,11 +68,28 @@
 
 # Mali
 /dev/mali[0-9]                                                                                                u:object_r:gpu_device:s0
+/dev/g2d                                                                                                      u:object_r:graphics_device:s0
 
 # NFC
 /dev/pn547		                                                                                      u:object_r:nfc_device:s0
+/dev/sec-nfc                                                                                                  u:object_r:nfc_device:s0
+/dev/p3                                                                                                       u:object_r:nfc_device:s0
+
+# Proca
+/dev/proca_config                                                                                             u:object_r:vendor_proca_config_device:s0
+
 # k250a
 /dev/k250a                                                                                                    u:object_r:k250a_device:s0
+
+# RIL
+/dev/modem_boot_spi                                                                                           u:object_r:vendor_radio_device:s0
+/dev/nr_boot0                                                                                                 u:object_r:vendor_radio_device:s0
+/dev/nr_dm0                                                                                                   u:object_r:vendor_radio_device:s0
+/dev/nr_ipc[0-1]                                                                                              u:object_r:vendor_radio_device:s0
+/dev/nr_ramdump0                                                                                              u:object_r:vendor_radio_device:s0
+/dev/nr_rfs0                                                                                                  u:object_r:vendor_radio_device:s0
+/dev/nr_router                                                                                                u:object_r:vendor_radio_device:s0
+/sys/devices/platform/cpif/sim/ds_detect	                                                              u:object_r:sysfs_sim_writable:s0
 
 ####################################
 # Efs Files
@@ -87,9 +118,10 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@[0-9]\.[0-9]_strongbox-service                    u:object_r:hal_keymaster_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@[0-9]\.[0-9]-service\.eden-drv               u:object_r:hal_neuralnetworks_eden_drv_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.eden_runtime@[0-9]\.[0-9]-service              u:object_r:hal_vendor_eden_runtime_default_exec:s0
-/vendor/bin/hw/android\.hardware\.secure_element_snxxx@1\.2-service                                           u:object_r:hal_secure_element_default_exec:s0
+/vendor/bin/hw/android\.hardware\.secure_element-service\.nxp                                                 u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.SbwcDecompService@1\.0-service                 u:object_r:hal_sbwcdecomp_default_exec:s0
-/vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                                                      u:object_r:hal_nfc_default_exec:s0
+/vendor/bin/hw/android\.hardware\.nfc-service\.nxp                                                            u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/vendor\.samsung\.hardware\.security\.proca@2\.0-service                                u:object_r:hal_proca_default_exec:s0
 
 ####################################
 # Same-process HAL files and their dependencies
@@ -105,16 +137,19 @@
 ####################################
 # Sysfs
 # Audio
-/sys/devices/platform/18c50000.abox/service                                                                   u:object_r:sysfs_abox:s0
+/sys/devices/platform/18c50000.abox/service                                                                   u:object_r:sysfs_abox_writable:s0
+/sys/devices/platform/18c50000.abox/abox-vdma.119/power                                                       u:object_r:sysfs_abox:s0
 
 # Battery
 /sys/class/power_supply/battery/batt_slate_mode                                                               u:object_r:sysfs_battery_writable:s0
 /sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-charger/power_supply/max77705-charger/type         u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type     u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/lcd            u:object_r:sysfs_battery_writable:s0
 
 # Block
-/sys/devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                u:object_r:sysfs_blk_file:s0
-
+/sys/devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                u:object_r:sysfs_block_writable:s0
+/sys/devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue                                  u:object_r:sysfs_block_writable:s0
+/sys/devices/platform/(.*)/block/mmcblk0/mmcblk0p[0-9]+/start                                                 u:object_r:sysfs_block:s0
 
 # Camera
 /sys/devices/virtual/camera/flash/rear_flash                                                                  u:object_r:sysfs_camera_writable:s0
@@ -124,7 +159,15 @@
 
 # Cirrus
 /sys/devices/virtual/cirrus/cirrus_cal(/.*)                                                                      u:object_r:vendor_sysfs_cirrus_cal:s0
-
+/sys/devices/virtual/cirrus/cirrus_cal                                                                           u:object_r:vendor_sysfs_cirrus_cal_writable:s0
+/sys/devices/virtual/cirrus/cirrus_cal/isc                                                                       u:object_r:vendor_sysfs_cirrus_cal_writable:s0
+/sys/devices/virtual/cirrus/cirrus_cal/isc_r                                                                     u:object_r:vendor_sysfs_cirrus_cal_writable:s0
+/sys/devices/virtual/cirrus/cirrus_cal/rdc                                                                       u:object_r:vendor_sysfs_cirrus_cal_writable:s0
+/sys/devices/virtual/cirrus/cirrus_cal/temp                                                                      u:object_r:vendor_sysfs_cirrus_cal_writable:s0
+/sys/devices/virtual/cirrus/cirrus_cal/rdc_r                                                                     u:object_r:vendor_sysfs_cirrus_cal_writable:s0
+/sys/devices/virtual/cirrus/cirrus_cal/vsc                                                                       u:object_r:vendor_sysfs_cirrus_cal_writable:s0
+/sys/devices/virtual/cirrus/cirrus_cal/vsc_r                                                                     u:object_r:vendor_sysfs_cirrus_cal_writable:s0
+                                                                      
 # Ems
 /sys/kernel/ems/emstune/req_mode                                                                              u:object_r:sysfs_ems:s0
 
@@ -132,12 +175,18 @@
 /sys/devices/platform/10ab0000.displayport/extcon/extcon0/state                                              u:object_r:sysfs_displayport_writable:s0
 /sys/devices/platform/10ab0000\.displayport/extcon/extcon0/cable\.(0|1)/(name|state)$                        u:object_r:sysfs_displayport_writable:s0
 
+# Gps
+/sys/devices/virtual/sec/gps/GPS_PWR_EN/value                                                                 u:object_r:sysfs_gps_writable:s0
+
 # Input
 /sys/devices/platform/105d0000\.hsi2c/i2c-[0-9]+/([0-9]+-)?0048/input/input[0-9]+/enabled$                    u:object_r:sysfs_ss_writable:s0
 
+# Memtrack
+/dev/dmabuf_trace                                                                                             u:object_r:memtrack_device:s0
+
 # MDNIE
 /sys/devices/platform/panel_drv_0/lcd/panel/mdnie(/.*)                                                        u:object_r:sysfs_lcd_writable:s0
-
+                                                                         
 # Sensors
 /sys/devices/platform/11ec0000.spi(/.*)/buffer(/.*)                                                           u:object_r:sysfs_sensors_writable:s0
 /sys/devices/platform/11ec0000.spi(/.*)/poll_delay                                                            u:object_r:sysfs_sensors_writable:s0
@@ -146,3 +195,6 @@
 # Wakeup devices
 /sys/devices/platform/[a-z0-9]+\.hsi2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/wakeup(/.*)?                               u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/samsung_mobile_device/samsung_mobile_device:[a-z0-9]+/wakeup/                           u:object_r:sysfs_wakeup:s0
+
+# WBRC
+/dev/wbrc                                                                                                     u:object_r:wbrc_device:s0

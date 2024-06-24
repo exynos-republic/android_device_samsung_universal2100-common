@@ -1,3 +1,4 @@
 # audioserver.te
 
 dontaudit audioserver vendor_default_prop:file read;
+allow audioserver vendor_default_prop:file { getattr map };

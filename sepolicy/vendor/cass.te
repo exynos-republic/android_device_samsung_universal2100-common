@@ -1,0 +1,9 @@
+# cass.te
+
+allow cass vndbinder_device:chr_file rw_file_perms;
+
+allow cass cass:dir search;
+allow cass cass:file { getattr open read };
+allow cass rild:unix_stream_socket connectto;
+
+binder_call(cass, vndservicemanager)

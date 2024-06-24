@@ -1,0 +1,12 @@
+# shell.te 
+
+allow shell sysfs_wifi:dir { open read };
+allow shell sysfs_wifi:dir search;
+allow shell sysfs_wifi:file getattr;
+allow shell sysfs_wifi_writable:file getattr;
+
+allow shell sysfs_wakeup_reasons:dir search;
+allow shell sysfs_wakeup_reasons:dir { open read };
+allow shell sysfs_wakeup_reasons:file getattr;
+
+allow shell sysfs:file getattr;

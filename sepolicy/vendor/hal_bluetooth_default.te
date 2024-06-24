@@ -1,0 +1,12 @@
+# hal_bluetooth_default.te
+
+allow hal_bluetooth_default wbrc_device:chr_file { open read write };
+
+typeattribute hal_bluetooth_default data_between_core_and_vendor_violators;
+
+allow hal_bluetooth_default bluetooth_data_file:dir search;
+allow hal_bluetooth_default bluetooth_data_file:file r_file_perms;
+allow hal_bluetooth_default sysfs:file rw_file_perms;
+set_prop(hal_bluetooth_default, vendor_bluetooth_prop);
+
+allow hal_bluetooth_default proc:file { open read write setattr getattr map };

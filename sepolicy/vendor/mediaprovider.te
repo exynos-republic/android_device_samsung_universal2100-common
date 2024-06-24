@@ -1,0 +1,3 @@
+# mediaprovider.te
+
+allow mediaprovider cache_recovery_file:dir { open read };

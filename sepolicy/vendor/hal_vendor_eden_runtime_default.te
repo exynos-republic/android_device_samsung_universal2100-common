@@ -29,6 +29,7 @@ allow hal_vendor_eden_runtime_default {
     sysfs_npu_version
 }:file r_file_perms;
 
+allow hal_vendor_eden_runtime_default data_eden_file:dir r_dir_perms;
 allow hal_vendor_eden_runtime_default data_eden_gpu_file:dir rw_dir_perms;
 allow hal_vendor_eden_runtime_default data_eden_gpu_file:file rw_file_perms;
 
@@ -42,3 +43,6 @@ vndbinder_use(hal_vendor_eden_runtime_default)
 
 dontaudit hal_vendor_eden_runtime_default system_data_file:dir search;
 dontaudit hal_vendor_eden_runtime_default traced:unix_stream_socket connectto;
+allow hal_vendor_eden_runtime_default sysfs_gpu:file { write };
+allow hal_vendor_eden_runtime_default data_eden_file:dir { search };
+allow hal_vendor_eden_runtime_default data_eden_gpu_file:file { create setattr };

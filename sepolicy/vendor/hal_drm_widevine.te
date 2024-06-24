@@ -19,3 +19,6 @@ allow hal_drm_widevine mnt_vendor_file:dir search;
 
 allow hal_drm_widevine mediadrm_vendor_data_file:dir create_dir_perms;
 allow hal_drm_widevine mediadrm_vendor_data_file:file create_file_perms;
+allow hal_drm_widevine powerctl_prop:file { open read };
+allow hal_drm_widevine powerctl_prop:file getattr;
+allow hal_drm_widevine powerctl_prop:file map;

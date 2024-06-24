@@ -27,3 +27,6 @@ allow hal_power_default {
 
 ## FIXME ##
 allow hal_power_default sysfs:file write;
+allow hal_power_default pm_qos_device:chr_file { open  write };
+allow hal_power_default sysfs_wakeup:file { open write };
+allow hal_power_default sysfs_battery_writable:file write;

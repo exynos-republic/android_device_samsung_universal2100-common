@@ -1,0 +1,3 @@
+# artd.te
+
+allow artd apk_tmp_file:dir { open read };

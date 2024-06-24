@@ -1,0 +1,4 @@
+# priv_app.te
+
+allow priv_app metadata_file:dir { open read };
+allow priv_app metadata_file:dir getattr;

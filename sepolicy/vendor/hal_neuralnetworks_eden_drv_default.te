@@ -7,6 +7,7 @@ hal_server_domain(hal_neuralnetworks_eden_drv_default, hal_neuralnetworks)
 
 init_daemon_domain(hal_neuralnetworks_eden_drv_default)
 
+allow hal_neuralnetworks_eden_drv_default data_eden_file:dir r_dir_perms;
 allow hal_neuralnetworks_eden_drv_default data_eden_gpu_file:dir rw_dir_perms;
 allow hal_neuralnetworks_eden_drv_default data_eden_gpu_file:file create_file_perms;
 allow hal_neuralnetworks_eden_drv_default vendor_eden_gpu_vendor_file:dir r_dir_perms;
@@ -29,3 +30,5 @@ allow hal_neuralnetworks_eden_drv_default traced_producer_socket:sock_file write
 
 dontaudit hal_neuralnetworks_eden_drv_default system_data_file:dir search;
 dontaudit hal_neuralnetworks_eden_drv_default traced:unix_stream_socket connectto;
+allow hal_neuralnetworks_eden_drv_default sysfs_gpu:file { write };
+allow hal_neuralnetworks_eden_drv_default data_eden_file:dir { search };

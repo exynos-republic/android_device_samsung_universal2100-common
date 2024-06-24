@@ -2,14 +2,20 @@
 
 # Block devices
 type blcmd_block_device, dev_type;
+type boota_block_device, dev_type;
 type cpdebug_block_device, dev_type;
+type dtb_block_device, dev_type;
+type harx_block_device, dev_type;
 type keystorage_block_device, dev_type;
 type nad_refer_block_device, dev_type;
 type optics_block_device, dev_type;
+type persist_block_device, dev_type;
 type param_block_device, dev_type;
 type prism_block_device, dev_type;
 type spu_block_device, dev_type;
 type steady_block_device, dev_type;
+type uh_block_device, dev_type;
+type uhcfg_block_device, dev_type;
 type up_param_block_device, dev_type;
 
 # Camera
@@ -23,8 +29,17 @@ type k250a_device, dev_type;
 # Eden
 type npu_device, dev_type;
 
+# Memtrack
+type memtrack_device, dev_type;
+
+# Proca
+type vendor_proca_config_device, dev_type;
+
 # Soundtrigger
 type vts_fio_device, dev_type;
+
+# Wbrc device
+type wbrc_device, dev_type;
 
 # Widevine
 type secmem_device, dev_type;

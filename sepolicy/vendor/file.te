@@ -7,6 +7,7 @@ type nfc_vendor_data_file, file_type, data_file_type;
 type npu_vendor_data_file, file_type, data_file_type;
 type per_boot_file, file_type, data_file_type, core_data_file_type;
 type vendor_eden_gpu_vendor_file, file_type, vendor_file_type;
+type data_eden_file, file_type, data_file_type;
 
 # debug types
 type debugfs_ion, fs_type, debugfs_type;
@@ -27,8 +28,9 @@ type ssm_efs_file, fs_type;
 type proc_dirty_background_bytes, fs_type, proc_type;
 type proc_dirty_bytes, fs_type, proc_type;
 
-# sysfs types
+# sysfs types 
 type sysfs_abox, sysfs_type, r_fs_type, fs_type;
+type sysfs_abox_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_app_launch_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_blk_file, sysfs_type, r_fs_type, fs_type;
 type sysfs_block, sysfs_type, r_fs_type, fs_type;
@@ -54,6 +56,7 @@ type sysfs_ss_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_ufs_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
 type vendor_sysfs_cirrus_cal, sysfs_type, r_fs_type, fs_type;
+type vendor_sysfs_cirrus_cal_writable, sysfs_type, rw_fs_type, fs_type;
 
 # vendor
 type sbwc_vendor_file, file_type, vendor_file_type;

@@ -86,7 +86,8 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge
 
 PRODUCT_PACKAGES += \
-    libhwjpeg
+    libhwjpeg \
+    libexpat.vendor
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -255,7 +256,9 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor:64 \
     android.hardware.radio.config@1.2.vendor:64 \
     android.hardware.radio.deprecated@1.0.vendor:64 \
-    secril_config_svc
+    secril_config_svc \
+    libnetutils.vendor \
+    libsqlite.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \

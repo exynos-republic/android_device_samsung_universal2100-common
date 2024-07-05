@@ -135,13 +135,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.samsung \
     android.hardware.health-service.samsung-recovery
 
-# HIDL
-PRODUCT_PACKAGES += \
-   libhidltransport \
-   libhidltransport.vendor \
-   libhwbinder \
-   libhwbinder.vendor
-
 # OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \

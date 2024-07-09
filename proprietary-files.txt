@@ -38,8 +38,8 @@ vendor/lib/soundfx/libaudioeffectoffload.so
 vendor/lib/soundfx/libmyspace.so
 vendor/lib/soundfx/libplaybackrecorder.so
 vendor/lib/vendor.samsung_slsi.hardware.ExynosA2DPOffload@3.0.so
-vendor/lib/vndk/libaudioroute.so;MODULE=libaudioroute.exynos2100
-vendor/lib/vndk/libtinyalsa.so;MODULE=libtinyalsa.exynos2100
+vendor/lib/vndk/libaudioroute.so:vendor/lib/libaudioroute.exynos2100.so;MODULE=libaudioroute.exynos2100
+vendor/lib/vndk/libtinyalsa.so:vendor/lib/libtinyalsa.exynos2100.so;MODULE=libtinyalsa.exynos2100
 vendor/lib64/hw/vendor.samsung.hardware.audio@1.0-impl.so
 vendor/lib64/lib_SoundAlive_3DPosition_ver202.so
 vendor/lib64/lib_SoundAlive_AlbumArt_ver105.so

@@ -256,6 +256,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.concurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.concurrent.xml \
     $(COMMON_PATH)/permissions/vendor.android.hardware.camera.preview-dis.back.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.android.hardware.camera.preview-dis.back.xml \
+	$(COMMON_PATH)/configs/permissions/platform-samsung.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/platform-samsung.xml
 
 # Power
 PRODUCT_PACKAGES += \

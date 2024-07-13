@@ -98,15 +98,6 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
             sed -i 's/_ZN7android6Thread3runEPKcim/_ZN7utils326Thread3runEPKcim/g' "${2}"
             ;;
-        vendor/lib/soundfx/libaudioeffectoffload.so | vendor/lib64/soundfx/libaudioeffectoffload.so)
-            [ "$2" = "" ] && return 0
-	        "$PATCHELF" --replace-needed libtinyalsa.so libtinyalsa.exynos2100.so "$2"
-            ;;
-        vendor/lib/hw/audio.primary.exynos2100.so)
-            [ "$2" = "" ] && return 0
-	        "$PATCHELF" --replace-needed libaudioroute.so libaudioroute.exynos2100.so "$2"
-            "$PATCHELF" --replace-needed libtinyalsa.so libtinyalsa.exynos2100.so "$2"
-            ;;
         *)
             return 1
             ;;

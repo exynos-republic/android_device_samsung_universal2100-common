@@ -34,6 +34,7 @@ TARGET_SOC := exynos2100
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
 SOONG_CONFIG_samsungCameraVars += extra_ids
+$(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
 
 # DTB
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true

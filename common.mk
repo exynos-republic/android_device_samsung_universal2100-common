@@ -303,8 +303,8 @@ PRODUCT_SOONG_NAMESPACES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0.vendor:64 \
-    android.hardware.thermal-service.samsung \
-    thermal_symlinks.samsung
+    android.hardware.thermal-service.pixel \
+    thermal_symlinks
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json

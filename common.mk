@@ -288,6 +288,9 @@ PRODUCT_PACKAGES += \
     libnetutils.vendor \
     libsqlite.vendor \
     libdsms_vendor:64 \
+    libcurl.vendor \
+    libjsoncpp.vendor \
+    libpng.vendor \
     sehradiomanager
 
 PRODUCT_COPY_FILES += \

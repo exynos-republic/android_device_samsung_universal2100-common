@@ -30,9 +30,6 @@ vendor/lib64/vendor.samsung.hardware.hyper-V2-ndk_platform.so
 vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
 
 # Camera firmware
-vendor/firmware/calliope_dram.bin
-vendor/firmware/calliope_dram_2.bin
-vendor/firmware/calliope_sram_2.bin
 vendor/firmware/clFGN10BitNV12_32.bin
 vendor/firmware/clFGN10BitNV12_64.bin
 vendor/firmware/clFGN10BitYV12_32.bin
@@ -130,10 +127,7 @@ vendor/lib64/vendor.samsung_slsi.hardware.eden_runtime@1.0.so
 # Firmware
 vendor/firmware/libivp.elf
 vendor/firmware/liblog.elf
-vendor/firmware/rxse.bin
 vendor/firmware/secure_configuration.flm.cfg.bin
-vendor/firmware/txse1.bin
-vendor/firmware/txse2.bin
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.exynos2100.so
@@ -201,7 +195,6 @@ vendor/etc/init/cass.rc
 vendor/etc/plmn_delta.bin
 vendor/etc/plmn_delta_attaio.bin
 vendor/etc/plmn_delta_usagsm.bin
-vendor/etc/plmn_se13.bin
 vendor/lib/libaudio-ril.so
 vendor/lib/libmdf.so
 vendor/lib/libsec_semRil.so
@@ -252,8 +245,6 @@ vendor/lib64/libteecl.so
 vendor/lib64/libuuid.so
 
 # Teegris Firmware
-vendor/tee/00000000-0000-0000-0000-42494f535542
-vendor/tee/00000000-0000-0000-0000-46494e474502
 vendor/tee/00000000-0000-0000-0000-6d706f667376
 vendor/tee/driver/18d9f073-18a5-4ade-9def-875e07f7f293_
 vendor/tee/tui/resolution_common/ID00000100

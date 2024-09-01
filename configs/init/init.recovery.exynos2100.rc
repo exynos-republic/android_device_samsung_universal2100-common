@@ -9,8 +9,8 @@ on late-init
     setprop sys.usb.configfs 1
     setprop sys.usb.config adb
 
-# Set watchdog timer to 40 seconds and pet it every 10 seconds to get a 30 second margin
-service watchdogd /system/bin/watchdogd 10 30
+# Set watchdog timer to 30 seconds and fed it every 10 seconds to get a 20 second margin
+service watchdogd /system/bin/watchdogd 10 20
     class core
     oneshot
     seclabel u:r:watchdogd:s0

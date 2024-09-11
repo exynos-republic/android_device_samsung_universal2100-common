@@ -15,8 +15,17 @@
 
 cc_library_shared {
     name: "libshim_crypto",
-    srcs: ["crypto.c"],
+    srcs: ["libshim_crypto/crypto.c"],
     compile_multilib: "64",
     shared_libs: ["libcrypto-tm"],
     vendor: true,
+}
+
+cc_library {
+    name: "libshim_crypto_cbs",
+    srcs: [
+        "libshim_crypto_cbs/cbs.c",
+    ],
+    system_ext_specific: true,
+    vendor_available: true,
 }

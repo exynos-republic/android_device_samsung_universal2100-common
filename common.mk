@@ -124,6 +124,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcrypto-tm \
     libshim_crypto:64 \
+    libshim_crypto_cbs.vendor \
     libssl-tm
 
 # Kernel

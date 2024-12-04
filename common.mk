@@ -19,6 +19,9 @@ COMMON_PATH := device/samsung/universal2100-common
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/universal2100-common/universal2100-common-vendor.mk)
 
+# Inherit non-AB Device 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
+
 PRODUCT_SHIPPING_API_LEVEL := 30
 BOARD_SHIPPING_API_LEVEL := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

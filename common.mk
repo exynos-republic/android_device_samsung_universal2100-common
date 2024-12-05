@@ -140,6 +140,9 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.samsung \
     android.hardware.health-service.samsung-recovery
 
+# Kernel
+PRODUCT_ENABLE_UFFD_GC := false
+
 # OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \

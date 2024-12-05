@@ -258,9 +258,9 @@ vendor/lib/arm.graphics-V1-ndk_platform.so
 vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/libOpenCL.so;SYMLINK=vendor/lib/libOpenCL.so.1;SYMLINK=vendor/lib/libOpenCL.so.1.1
 vendor/lib/hw/vulkan.mali.so
 vendor/lib64/arm.graphics-V1-ndk_platform.so
-vendor/lib64/libepic_helper.so
 vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/libOpenCL.so;SYMLINK=vendor/lib64/libOpenCL.so.1;SYMLINK=vendor/lib64/libOpenCL.so.1.1
 vendor/lib64/hw/vulkan.mali.so
+vendor/lib64/libepic_helper.so
 
 # Hwvault
 vendor/lib64/libhwvault.so
@@ -278,10 +278,10 @@ vendor/lib64/libhermes_bdbridge.so
 vendor/lib64/libhermes_cred.so
 
 # Keymaster
--vendor/lib64/libskeymaster4device.so
 vendor/bin/hw/android.hardware.keymaster@4.0_strongbox-service
 vendor/etc/init/android.hardware.keymaster@4.0_strongbox-service.rc
 vendor/lib64/libkeymaster_helper.so
+-vendor/lib64/libskeymaster4device.so
 
 # MFC Firmware
 vendor/firmware/mfc/mfc_fw_flash.bin

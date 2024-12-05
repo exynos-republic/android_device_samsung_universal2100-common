@@ -72,8 +72,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
     hwcomposer.exynos2100 \
-    libion \
-    libGrallocWrapper
+    libion
 
 PRODUCT_PACKAGES += \
     vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service

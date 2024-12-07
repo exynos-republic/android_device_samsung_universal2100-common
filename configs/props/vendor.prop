@@ -38,6 +38,9 @@ ro.frp.pst=/dev/block/persistent
 # Fastbootd
 ro.fastbootd.available=true
 
+## FUSE
+persist.sys.fuse.passthrough.enable=true
+
 # Graphics
 debug.sf.enable_transaction_tracing=false
 debug.sf.high_fps_late_app_phase_offset_ns=0

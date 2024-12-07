@@ -1,32 +1,13 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2024 The LineageOS Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# SPDX-License-Identifier: Apache-2.0
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 COMMON_PATH := device/samsung/universal2100-common
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_DUP_RULES := true
-
-# Inherit proprietary vendor configuration
-include vendor/samsung/universal2100-common/BoardConfigVendor.mk
-
-# Platform
-BOARD_VENDOR := samsung
-TARGET_BOARD_PLATFORM := universal2100
-TARGET_BOOTLOADER_BOARD_NAME := exynos2100
-TARGET_SOC := exynos2100
-include hardware/samsung_slsi-linaro/config/BoardConfig2100.mk
 
 # Architecture
 TARGET_ARCH := arm64
@@ -45,36 +26,14 @@ TARGET_2ND_CPU_VARIANT := cortex-a76
 BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-BOARD_BOOT_HEADER_VERSION := 3
-BOARD_CUSTOM_BOOTIMG := true
-BOARD_DTB_OFFSET := 0x81F00000
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_OFFSET := 0x80008000
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x80000000
-BOARD_RAMDISK_OFFSET := 0x84000000
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := exynos2100
+TARGET_SOC := exynos2100
 
-BOARD_MKBOOTIMG_ARGS := \
-    --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --dtb_offset $(BOARD_DTB_OFFSET) \
-    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --pagesize $(BOARD_KERNEL_PAGESIZE) --header_version $(BOARD_BOOT_HEADER_VERSION) \
-    --board "SRPTH19C005KU"
-
-## Camera
+# Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
 SOONG_CONFIG_samsungCameraVars += extra_ids
-
-# Dynamic Partitions
-BOARD_SUPER_PARTITION_SIZE := 11429478400
-BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 11425284096
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
-    system \
-    system_ext \
-    vendor \
-    vendor_dlkm \
-    product \
-    odm
 
 # DTB
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
@@ -84,32 +43,8 @@ BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_SOC).cfg
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/$(TARGET_DEVICE).cfg
 
-# Filesystem
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_COPY_OUT_ODM := odm
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-
 # Fingerprint
 TARGET_SEC_FP_REQUEST_FORCE_CALIBRATE := true
-
-# Kernel
-BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_KERNEL_SOURCE := kernel/samsung/universal2100
-TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1
-KERNEL_LD := LD=ld.lld
-
-# Keymaster
-TARGET_KEYMASTER_VARIANT := samsung
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
@@ -117,6 +52,28 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     vendor/lineage/config/device_framework_matrix.xml
 
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
+
+# Kernel
+BOARD_BOOT_HEADER_VERSION := 3
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_DTB_OFFSET := 0x81F00000
+BOARD_RAMDISK_OFFSET := 0x84000000
+
+BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_OFFSET := 0x80008000
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_TAGS_OFFSET := 0x80000000
+
+BOARD_MKBOOTIMG_ARGS := \
+    --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --dtb_offset $(BOARD_DTB_OFFSET) \
+    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --pagesize $(BOARD_KERNEL_PAGESIZE) --header_version $(BOARD_BOOT_HEADER_VERSION) \
+    --board "SRPTH19C005KU"
+
+TARGET_KERNEL_SOURCE := kernel/samsung/universal2100
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1
+KERNEL_LD := LD=ld.lld
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -138,6 +95,41 @@ BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1887436800
 BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 92160000
 endif
+
+BOARD_SUPER_PARTITION_SIZE := 11429478400
+BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 11425284096
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
+    system \
+    system_ext \
+    vendor \
+    vendor_dlkm \
+    product \
+    odm
+
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
+
+TARGET_COPY_OUT_ODM := odm
+TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_SYSTEM_EXT := system_ext
+TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
+
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
+# Platform
+TARGET_KEYMASTER_VARIANT := samsung
+BOARD_VENDOR := samsung
+TARGET_BOARD_PLATFORM := universal2100
+TARGET_BOOTLOADER_BOARD_NAME := exynos2100
+TARGET_SOC := exynos2100
+include hardware/samsung_slsi-linaro/config/BoardConfig2100.mk
 
 # Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/props/vendor.prop
@@ -186,3 +178,6 @@ WIFI_FEATURE_HOSTAPD_11AX        := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
+
+# Inherit proprietary vendor configuration
+include vendor/samsung/universal2100-common/BoardConfigVendor.mk

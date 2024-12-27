@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/samsung/universal2100-common
+COMMON_PATH := device/samsung/universal2100-common
 
 # Inherit non-AB Device 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
@@ -39,8 +39,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_stream_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_stream_volumes.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+    $(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -107,14 +107,14 @@ PRODUCT_PACKAGES += \
 
 # init
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos2100 \
-    $(LOCAL_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.exynos2100 \
-    $(LOCAL_PATH)/configs/init/fstab.universal2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.exynos2100 \
-    $(LOCAL_PATH)/configs/init/init.exynos2100.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.rc \
-    $(LOCAL_PATH)/configs/init/init.exynos2100.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.usb.rc \
-    $(LOCAL_PATH)/configs/init/init.recovery.exynos2100.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos2100.rc \
-    $(LOCAL_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    $(LOCAL_PATH)/configs/init/init.udfps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.udfps.rc
+    $(COMMON_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos2100 \
+    $(COMMON_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.exynos2100 \
+    $(COMMON_PATH)/configs/init/fstab.universal2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.exynos2100 \
+    $(COMMON_PATH)/configs/init/init.exynos2100.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.rc \
+    $(COMMON_PATH)/configs/init/init.exynos2100.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.usb.rc \
+    $(COMMON_PATH)/configs/init/init.recovery.exynos2100.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos2100.rc \
+    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(COMMON_PATH)/configs/init/init.udfps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.udfps.rc
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -131,10 +131,10 @@ PRODUCT_ENABLE_UFFD_GC := false
 
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml
+    $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(COMMON_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    $(COMMON_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(COMMON_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml
 
 PRODUCT_PACKAGES += \
     libstagefright_softomx_plugin.vendor
@@ -163,8 +163,8 @@ PRODUCT_PACKAGES += \
     Tag
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+    $(COMMON_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(COMMON_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -187,7 +187,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(COMMON_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -257,8 +257,8 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
-    $(LOCAL_PATH)/configs/power/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+    $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
+    $(COMMON_PATH)/configs/power/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -266,7 +266,7 @@ PRODUCT_PACKAGES += \
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+    $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -293,7 +293,7 @@ PRODUCT_PACKAGES += \
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
+    $(COMMON_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/samsung \
@@ -311,7 +311,7 @@ PRODUCT_PACKAGES += \
     libhidlmemory.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
+    $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # Update
 AB_OTA_UPDATER := false
@@ -342,8 +342,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+    $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/universal2100-common/universal2100-common-vendor.mk)

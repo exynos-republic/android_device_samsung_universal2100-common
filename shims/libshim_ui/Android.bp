@@ -12,7 +12,10 @@ cc_library_shared {
         "libutils",
     ],
     srcs: [
-        "GraphicBufferMapper.cpp",
+        "libui/Fence.cpp",
+        "libui/GraphicBuffer.cpp",
+        "libui/GraphicBufferMapper.cpp",
     ],
     system_ext_specific: true,
+    vendor_available: true,
 }

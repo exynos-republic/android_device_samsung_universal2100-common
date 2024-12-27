@@ -289,7 +289,7 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshim_sensorndkbridge \
-    libui_shim.vendor
+    libshim_ui.vendor
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \

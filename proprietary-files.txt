@@ -336,6 +336,7 @@ vendor/etc/init/vendor.samsung.rilchip.slsi.rc|95aa52333814b340e5064eae3a9bd5cb8
 # Teegris
 vendor/bin/tzdaemon
 vendor/bin/tzts_daemon
+vendor/etc/init/pa_daemon_teegris.rc
 vendor/etc/init/teegris_v4.rc
 vendor/lib/libteecl.so
 vendor/lib/libuuid.so

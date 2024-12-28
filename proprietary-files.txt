@@ -362,6 +362,10 @@ vendor/tee/tui/resolution_common/ID00000100
 vendor/etc/libnfc-nxp.conf
 vendor/firmware/nfc/libsn100u_fw.so:vendor/lib64/libsn100u_fw.so
 
+# Secnative
+vendor/lib/libsecnativefeature.so
+vendor/lib64/libsecnativefeature.so
+
 # Secure Element
 vendor/etc/libese-nxp.conf
 

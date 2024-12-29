@@ -13,13 +13,11 @@ type persist_block_device, dev_type;
 type param_block_device, dev_type;
 type prism_block_device, dev_type;
 type spu_block_device, dev_type;
-type steady_block_device, dev_type;
 type uh_block_device, dev_type;
 type uhcfg_block_device, dev_type;
 type up_param_block_device, dev_type;
 
 # Camera
-type caminfo_device, dev_type;
 type m2m1shot_device, dev_type;
 type jsqz_device, dev_type;
 

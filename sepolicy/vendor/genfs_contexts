@@ -22,16 +22,11 @@ genfscon proc /sys/vm/dirty_background_bytes                                    
 # Audio
 genfscon sysfs /devices/platform/18c50000.abox/service                                                                                u:object_r:sysfs_abox:s0
 
-# Backlight
-genfscon sysfs /devices/platform/panel_drv_0/backlight/panel/brightness                                                              u:object_r:sysfs_backlight_writable:s0
-genfscon sysfs /devices/platform/panel_drv_0/backlight/panel/max_brightness                                                          u:object_r:sysfs_backlight_writable:s0
-
 # Block
 genfscon sysfs /devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                            u:object_r:sysfs_blk_file:s0
 
 # Battery
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/type u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-16/16-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-17/17-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
@@ -76,7 +71,6 @@ genfscon sysfs /devices/platform/19f03000.decon_3/vsync                         
 genfscon sysfs /kernel/gpu/gpu_freq_table                                                                                            u:object_r:sysfs_gpu:s0
 genfscon sysfs /kernel/gpu/gpu_max_clock                                                                                             u:object_r:sysfs_gpu_writable:s0
 genfscon sysfs /kernel/gpu/gpu_memory                                                                                                u:object_r:sysfs_gpu_memory:s0
-genfscon sysfs /kernel/gpu/gpu_min_clock                                                                                             u:object_r:sysfs_gpu_writable:s0
 genfscon sysfs /kernel/gpu/gpu_mm_min_clock                                                                                          u:object_r:sysfs_gpu:s0
 genfscon sysfs /kernel/gpu/gpu_poweroff_delay                                                                                        u:object_r:sysfs_gpu:s0
 

@@ -303,8 +303,12 @@ PRODUCT_SOONG_NAMESPACES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0.vendor:64 \
+	android.hardware.thermal@2.0.vendor:64 \
     android.hardware.thermal-service.pixel \
-    thermal_symlinks
+    thermal_symlinks \
+    libGrallocMapperCamera \
+    libutilscallstack.vendor \
+    libhidlmemory.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json

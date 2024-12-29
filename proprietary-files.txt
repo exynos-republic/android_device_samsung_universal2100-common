@@ -333,6 +333,14 @@ vendor/etc/init/vendor.samsung.rilchip.slsi.rc|95aa52333814b340e5064eae3a9bd5cb8
 -vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so|9b3b09c9bc2911b801d0de0caea13476a90f8776
 -vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so|611a9f8ca1a46b33471643e200e70ce28f963b75
 
+## VaultKeeper
+vendor/bin/vaultkeeperd
+vendor/etc/init/vaultkeeper_common.rc
+vendor/lib64/libstork_shared.so
+vendor/lib64/libvkmanager_vendor.so
+vendor/lib64/libvkservice.so
+
+
 # Teegris
 vendor/bin/tzdaemon
 vendor/bin/tzts_daemon

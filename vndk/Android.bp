@@ -14,16 +14,23 @@
 // limitations under the License.
 //
 
+
 cc_prebuilt_library_shared {
     name: "libcrypto-tm",
+    vendor: true,
+    strip: {
+        none: true,
+    },
     target: {
+        android_arm: {
+            srcs: ["libcrypto/arm/libcrypto-tm.so"],
+        },
         android_arm64: {
-            srcs: ["libcrypto-tm.so"],
+            srcs: ["libcrypto/arm64/libcrypto-tm.so"],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     check_elf_files: false,
-    vendor: true,
 }
 
 cc_prebuilt_library_shared {

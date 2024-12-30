@@ -19,10 +19,11 @@ ro.debug_level                 u:object_r:exported_system_prop:s0
 vendor.nfc.fw.                 u:object_r:vendor_nfc_prop:s0
 
 # Radio
-ro.ril.support_cdma            u:object_r:radio_prop:s0
-persist.ril.esim.slotswitch    u:object_r:radio_prop:s0
-ro.ril.svlte1x                 u:object_r:radio_prop:s0
-ro.ril.svdo                    u:object_r:radio_prop:s0
+ro.ril.support_cdma              u:object_r:radio_prop:s0
+persist.ril.esim.slotswitch      u:object_r:radio_prop:s0
+persist.ril.supportNrModefromCp  u:object_r:radio_prop:s0
+ro.ril.svlte1x                   u:object_r:radio_prop:s0
+ro.ril.svdo                      u:object_r:radio_prop:s0
 
 # Samsung
 persist.sys.sec_cid            u:object_r:exported_system_prop:s0

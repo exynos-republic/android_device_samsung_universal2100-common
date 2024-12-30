@@ -6,3 +6,7 @@ allow hal_nfc_default nfc_vendor_data_file:file create_file_perms;
 get_prop(hal_camera_default, exported_system_prop)
 get_prop(hal_nfc_default, product_ship_prop)
 set_prop(hal_nfc_default, vendor_nfc_prop)
+
+hwbinder_use(hal_nfc_default)
+add_hwservice(hal_nfc_default, hal_nxp_nfc_hwservice)
+binder_call(hal_secure_element_default, hal_nfc_default)

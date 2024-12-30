@@ -11,3 +11,6 @@ type hal_proca_hwservice, hwservice_manager_type;
 
 # SBWC
 type hal_sbwcdecomp_hwservice, hwservice_manager_type;
+
+# NXP NFC
+type hal_nxp_nfc_hwservice, hwservice_manager_type;

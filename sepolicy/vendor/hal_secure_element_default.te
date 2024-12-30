@@ -15,3 +15,11 @@ allow hal_secure_element_default hal_nfc_default:binder call;
 wakelock_use(hal_secure_element_default)
 
 set_prop(hal_secure_element_default, vendor_sehal_init_prop)
+
+hal_client_domain(hal_secure_element_default, hal_nfc)
+
+hwbinder_use(hal_secure_element_default)
+
+binder_call(hal_secure_element_default, hal_nfc_server)
+
+allow hal_secure_element_default hal_nxp_nfc_hwservice:hwservice_manager find;

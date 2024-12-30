@@ -2,6 +2,10 @@ type hermesd, domain;
 type hermesd_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hermesd)
 
+hal_client_domain(hermesd, hal_weaver)
+hwbinder_use(hermesd)
+binder_call(hermesd, hal_weaver_server)
+
 allow hermesd hwservicemanager:binder call;
 allow hermesd hwservicemanager_prop:file { getattr map open read };
 allow hermesd init:unix_stream_socket connectto;

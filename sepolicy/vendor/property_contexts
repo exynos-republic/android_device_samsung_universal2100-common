@@ -44,3 +44,6 @@ vendor.seHal.init              u:object_r:vendor_sehal_init_prop:s0
 # Wifi
 vendor.wlan.driver.version     u:object_r:vendor_wifi_version_prop:s0
 vendor.wlan.firmware.version   u:object_r:vendor_wifi_version_prop:s0
+
+# Oneui
+ro.build.version.oneui        u:object_r:oneui_version_prop:s0

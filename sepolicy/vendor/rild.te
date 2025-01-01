@@ -19,6 +19,7 @@ allow rild log_vendor_data_file:dir create_dir_perms;
 allow rild log_vendor_data_file:file create_file_perms;
 
 get_prop(rild, product_ship_prop)
+get_prop(rild, oneui_version_prop)
 set_prop(rild, vendor_radio_prop)
 set_prop(rild, radio_prop)
 

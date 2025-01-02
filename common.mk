@@ -56,7 +56,6 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge
 
 PRODUCT_PACKAGES += \
-    libhwjpeg \
     libexpat.vendor
 
 # Cgroup and task_profiles

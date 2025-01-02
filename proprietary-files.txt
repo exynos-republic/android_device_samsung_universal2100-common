@@ -5,6 +5,7 @@ vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 vendor/lib64/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 
 # Camera dependencies
+vendor/lib/libhwjpeg.so
 vendor/lib/libSEF.quram.so
 vendor/lib/libexynoscamera_plugin.so
 vendor/lib/libexynoscamera_plugin_utils.so
@@ -16,6 +17,7 @@ vendor/lib/libuniplugin.so
 vendor/lib/libvpl.so
 vendor/lib/vendor.samsung.hardware.hyper-V2-ndk_platform.so
 vendor/lib/vendor.samsung.hardware.thermal@1.0.so
+vendor/lib64/libhwjpeg.so
 vendor/lib64/libSEF.quram.so
 vendor/lib64/libexynoscamera_plugin.so
 vendor/lib64/libexynoscamera_plugin_utils.so

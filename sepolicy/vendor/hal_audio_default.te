@@ -33,3 +33,6 @@ allow hal_audio_default sysfs_abox_writable:file { open write };
 allow hal_audio_default vendor_sysfs_cirrus_cal_writable:file write;
 allow hal_audio_default vendor_sysfs_cirrus_cal_writable:dir search;
 allow hal_audio_default vendor_sysfs_cirrus_cal_writable:file { getattr open write };
+
+allow hal_audio_default log_vendor_data_file:dir { rw_file_perms add_name search };
+allow hal_audio_default log_vendor_data_file:file create_file_perms;

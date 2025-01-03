@@ -140,6 +140,14 @@
 /sys/devices/platform/18c50000.abox/abox-vdma.119/power                                                       u:object_r:sysfs_abox:s0
 
 # Battery
+/sys/class/power_supply/ac                                                                                    u:object_r:sysfs_battery:s0
+/sys/class/power_supply/battery                                                                               u:object_r:sysfs_battery:s0
+/sys/class/power_supply/otg                                                                                   u:object_r:sysfs_battery:s0
+/sys/class/power_supply/pogo                                                                                  u:object_r:sysfs_battery:s0
+/sys/class/power_supply/sec-direct-charger                                                                    u:object_r:sysfs_battery:s0
+/sys/class/power_supply/usb                                                                                   u:object_r:sysfs_battery:s0
+/sys/class/power_supply/wireless                                                                              u:object_r:sysfs_battery:s0
+/sys/class/power_supply/max77705-otg                                                                          u:object_r:sysfs_battery:s0
 /sys/class/power_supply/battery/batt_slate_mode                                                               u:object_r:sysfs_battery_writable:s0
 /sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-charger/power_supply/max77705-charger/type         u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type     u:object_r:sysfs_batteryinfo:s0
@@ -194,6 +202,11 @@
 # Wakeup devices
 /sys/devices/platform/[a-z0-9]+\.hsi2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/wakeup(/.*)?                               u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/samsung_mobile_device/samsung_mobile_device:[a-z0-9]+/wakeup/                           u:object_r:sysfs_wakeup:s0
+/sys/class/power_supply/pca9468-charger                                                                       u:object_r:sysfs_wakeup:s0
+/sys/class/power_supply/max77705-charger                                                                      u:object_r:sysfs_wakeup:s0
+/sys/class/power_supply/max77705-fuelgauge                                                                    u:object_r:sysfs_wakeup:s0
+/sys/class/power_supply/mfc-charger                                                                           u:object_r:sysfs_wakeup:s0
+
 
 # WBRC
 /dev/wbrc                                                                                                     u:object_r:wbrc_device:s0

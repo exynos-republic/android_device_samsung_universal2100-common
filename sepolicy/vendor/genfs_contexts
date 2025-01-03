@@ -26,7 +26,20 @@ genfscon sysfs /devices/platform/18c50000.abox/service                          
 genfscon sysfs /devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                            u:object_r:sysfs_blk_file:s0
 
 # Battery
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/waiting_for_supplier u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/type u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/usb/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/ac/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/pogo/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/wireless/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/otg/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10580000.hsi2c/i2c-3/3-003b/power_supply/mfc-charger/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0057/power_supply/pca9468-charger/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/power_supply/max77705-otg/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/power_supply/max77705-charger/subsystem u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-16/16-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-17/17-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
@@ -125,6 +138,17 @@ genfscon sysfs /kernel/mm/vmscan/am_app_launch                                  
 genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                                                                      u:object_r:sysfs_mem_boost_writable:s0
 
 # Wakeup
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/otg/wakeup140/subsystem u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/wireless/wakeup139/subsystem u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/pogo/wakeup138/device u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/wakeup87/device u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/power_supply/max77705-otg/wakeup79/device u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/power_supply/max77705-charger/wakeup78/device u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/ac/wakeup136/subsystem u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/usb/wakeup135/device u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/wakeup122/device u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10580000.hsi2c/i2c-3/3-003b/power_supply/mfc-charger/wakeup117/device u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0057/power_supply/pca9468-charger/wakeup83/device u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0057/power_supply/pca9468-charger/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0063/power_supply/sm5451-charger/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-charger/power_supply/max77705-charger/wakeup u:object_r:sysfs_wakeup:s0

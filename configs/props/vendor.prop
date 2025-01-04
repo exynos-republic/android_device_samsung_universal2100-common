@@ -100,3 +100,8 @@ ro.vendor.cscsupported=1
 # Samsung hermesd props
 security.securehw.available=false
 security.securenvm.available=false
+
+# Background blur
+ro.sf.blurs_are_expensive=1
+ro.surface_flinger.supports_background_blur=1
+persist.sys.sf.enable_blurs=1

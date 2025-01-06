@@ -49,6 +49,10 @@ $(call inherit-product, vendor/hentai/build/product/hentai_product.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
 
+# HentaiOS device spoofing
+PRODUCT_PACKAGES += \
+	helluvaProductDevice
+
 # device-specific pixelapps rro_overlays
 PRODUCT_PACKAGES += \
 	SettingsGoogleOverlay-o1s \

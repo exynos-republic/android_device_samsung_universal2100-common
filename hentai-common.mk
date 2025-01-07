@@ -48,3 +48,15 @@ $(call inherit-product, vendor/hentai/build/product/hentai_product.mk)
 # TODO(b/136525499): move *_vendor.mk into the vendor makefile later
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
+
+# device-specific pixelapps rro_overlays
+PRODUCT_PACKAGES += \
+	SettingsGoogleOverlay-o1s \
+	SystemUIGoogleOverlay-o1s
+
+
+TARGET_PREBUILT_PIXELAPPS := true
+PIXELAPPS_UDFPS := true
+
+# Inherit from prebuilt PixelApps
+$(call inherit-product, vendor/pixelapps/config.mk)

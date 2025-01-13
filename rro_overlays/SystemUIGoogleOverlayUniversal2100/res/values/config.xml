@@ -26,6 +26,15 @@
          non-interactive. -->
     <bool name="doze_display_state_supported">true</bool>
 
+    <!-- Doze: does this device support STATE_DOZE_SUSPEND?  -->
+    <bool name="doze_suspend_display_state_supported">false</bool>
+
+    <!-- Whether to enable Wireless Charging feature -->
+    <bool name="config_wlc_support_enabled">true</bool>
+
+    <!-- This should only be active if the vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
+
     <!-- Threshold in micro watts above which a charger is rated as "fast"; 10.8W  -->
     <integer name="config_chargingFastThreshold">10800000</integer>
 
